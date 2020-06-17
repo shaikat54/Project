@@ -1,0 +1,63 @@
+<html>
+    <body bgcolor="lightgreen">
+		<h1> * * Welcome * * </h1>
+		<h4> Dear User, here is the steps to check Blood Pressure (B.P) and Cholesterol</h4>
+		<p> 1. Select the button to check either Blood Pressure or Cholesterol </p>
+		<p> 2. Next , enter your value</p>
+		<p> 3. Then click on the "Submit" Button </p>
+		<p> 4. Finally your result will be displayed below </p>
+		<tr>
+        	<td><input type="radio" id="bp" name="check" value="bp"></td>
+            <label for="bp">Blood Pressure</label>
+            <td><input type="radio" id="ch" name="check" value="ch"></td>
+			<label for="ch">Cholestrol</label></br>
+			<td><input type="text" id="txt"> </td></br>
+            <td><button type="button" onclick="display()"> </td>
+                    Submit 
+				</button> 
+		</tr>
+         <p id="result"></p>
+            
+    </body>
+    <script>
+        function display(){
+			var ele=document.getElementsByName('check');
+			var txt=document.getElementById('txt').value;
+            if(ele[0].checked){
+                if(txt<=100)
+	{
+
+		document.getElementById('result').innerHTML="You have a low Blood Pressure(B.P)";
+
+	}
+	else if(txt>=120&&txt<=139)
+	{
+		document.getElementById('result').innerHTML="Your Blood Pressure(B.P) is normal";
+	}
+	else if(txt>=140)
+	{
+		document.getElementById('result').innerHTML="Your Blood Pressure(B.P) is high";
+	}
+            }
+            else if(ele[1].checked){
+                if(txt>=100&&txt<=199)
+	{
+		document.getElementById('result').innerHTML="You have low cholesterol ";
+	}
+	else if(txt>=200&&txt<=239)
+	{
+		document.getElementById('result').innerHTML="Your cholesterol is in borderline";
+	}
+	else if(txt>=240)
+	{
+		document.getElementById('result').innerHTML="You have high cholesterol";
+	}
+	else if(txt<=99)
+	{
+		document.getElementById('result').innerHTML="please visit the docter";
+	}
+            }
+        }
+	</script>
+	</body>
+</html>
